@@ -19,7 +19,7 @@ void box(float x,float y,float x1,float y1){
 }
 
 
-void chessBoard(){
+void chessBoard(int n){
 	glColor3f(1.0f,1.0f,1.0f);
 	glBegin(GL_LINES);
 	glVertex2f(-0.9,0.9);
@@ -35,9 +35,9 @@ void chessBoard(){
 	glVertex2f(-0.9,0.9);
 	glEnd();
 	
-	float rows=0.9/(6);
-	for(int i=1;i<=12;i++){
-		for(int j=1;j<=12;j++){
+	float rows=0.9/(n/2.0);
+	for(int i=1;i<=n;i++){
+		for(int j=1;j<=n;j++){
 				if(j%2==0&&i%2==1){
 					glColor3f(1.0f,1.0f,1.0f);
 					box(-0.9+((j-1)*rows),0.9-((i-1)*rows),-0.9+(j*rows),0.9-(i*rows));
@@ -53,7 +53,7 @@ void chessBoard(){
 
 void display(){
 	glClear(GL_COLOR_BUFFER_BIT);
-	chessBoard();
+	chessBoard(16); //It's your choice you can choose hard coded value or value input from user
 	glFlush();
 }
 int main(int argc, char** argv) {
