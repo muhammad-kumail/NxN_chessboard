@@ -58,7 +58,7 @@ void display(){
 }
 int main(int argc, char** argv) {
 	glutInit(&argc, argv);          // Initialize GLUT
-	glutCreateWindow("Circle using GL_LINES");  // Create window with the given title
+	glutCreateWindow("Chessboard using GL_QUADS");  // Create window with the given title
 	glutInitWindowSize(320, 320);   // Set the window's initial width & height
 	glutInitWindowPosition(50, 50); 
 	glutDisplayFunc(display);       // Register callback handler for window re-paint event
